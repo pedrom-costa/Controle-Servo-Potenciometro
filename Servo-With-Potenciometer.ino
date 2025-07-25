@@ -4,7 +4,7 @@
 int potpin = A0;
 // Define a variável Angulo
 int Angulo = 0;
-// Define a variável que carregará os 
+// Define a variável que carregará os valores lidos
 int valor_lido;
 Servo Servo;
 
@@ -20,7 +20,7 @@ void loop() {
   // Atribui a "valor_lido" o valor analógico proveniente do potenciômetro
   valor_lido = analogRead(potpin);
   Serial.println(valor_lido);
-  // Variável dentro do map = Valor a ser convertido. Variável fora é aquela que recebe o valor convertido
+  // Variável dentro do map = Valor a ser convertido. Variável fora = É aquela que recebe o valor convertido
   Angulo = map(valor_lido, 0, 1023, 0, 180);
   // "Move" o servo com base no valor convertido
   Servo.write(Angulo);
